@@ -104,12 +104,13 @@ const Search = (props) => {
           }
         >
           {search ? (
-            <div className="relative z-1 mt-12 py-20 px-6 sm:py-6 md:pb-20 mx-auto md:w-11/12 lg:max-w-7xl">
+            <div className="relative z-1 mt-12 py-10 md:py-20 px-6 sm:py-6 md:pb-20 mx-auto md:w-11/12 lg:max-w-7xl">
               <div className="flex gap-8 flex-wrap mx-auto justify-center">
                 {routerState.search_data?.map((book) => {
                   return (
                     <div key={book.id}>
                       <BookCard
+                        id={book.id}
                         title={book.title}
                         author={book.authors[0]}
                         section_length={book.sections.length}
@@ -129,6 +130,7 @@ const Search = (props) => {
                   return (
                     <div key={book.id}>
                       <BookCard
+                        id={book.id}
                         title={book.title}
                         author={book.authors[0]}
                         section_length={book.sections.length}

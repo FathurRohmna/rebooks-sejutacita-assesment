@@ -17,6 +17,7 @@ export default function SavedBooks() {
             return (
               <div key={book.id}>
                 <BookCard
+                  id={book.id}
                   title={book.title}
                   author={book.authors[0]}
                   section_length={book.sections.length}

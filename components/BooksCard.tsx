@@ -1,21 +1,26 @@
 import Image from "next/image";
+import Link from "next/link"
 
 import { BsBookmark, BsBookmarkCheckFill } from "react-icons/bs";
 
-export const BookCard = ({ image, title, author, section_length, saveBook, savedBook = false, removeBook }) => {
+export const BookCard = ({ image, id, title, author, section_length, saveBook, savedBook = false, removeBook }) => {
   return (
-    <div className="p-2 rounded-lg border border-gray-200 w-min">
+    <div className="p-2 rounded-lg border border-gray-200 w-full md:w-min">
       <div>
-        <div className="relative w-52">
-          <Image
-            className="rounded-lg"
-            src={image}
-            alt="Profile"
-            layout="responsive"
-            width={60}
-            height={60}
-          />
-        </div>
+        <Link href={`/book/${id}`}>
+          <a>
+            <div className="relative w-full md:w-52">
+              <Image
+                className="rounded-lg"
+                src={image}
+                alt="Profile"
+                layout="responsive"
+                width={60}
+                height={60}
+              />
+          </div>
+          </a>
+        </Link>
       </div>
       <div className="flex py-4">
         <div className="flex-1">

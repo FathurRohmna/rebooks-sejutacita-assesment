@@ -7,4 +7,4 @@ export const SendRequest = (method, url, params?) => instance.request({ method, 
 
 export const GetData = async (dataType, params) => SendRequest("get", RestUrls[dataType], params)
 
-export const GetBooksLength = async (categoryId) => SendRequest("get", `http://localhost:3002/api/data_length?categoryId=${categoryId}`,)
+export const GetBooksLength = async (categoryId) => SendRequest("get", `/api/data_length?categoryId=${categoryId}`,)

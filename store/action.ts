@@ -1,6 +1,5 @@
 import { GetBooksLength, GetData } from './../services/BookApiService';
 import { Action } from "redux"
-import { data as phData } from "../data/dummy"
 import { ActionTypes } from "./action-types"
 import { DataTypes } from "./data-types"
 

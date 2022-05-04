@@ -25,36 +25,38 @@ export const PaginationButton: React.FC<Props> = ({ pageCount, currentPage, navi
 
   return (
     <div>
-      <button className="mx-1 px-4 py-2 rounded border border-gray-300 bg-gray-200 text-gray-900" onClick={() => navigate(currentPage - 1)} disabled={currentPage === 1}>
+      <button className="mx-1 my-2 md:my-0 w-full md:w-min px-4 py-2 rounded border border-gray-300 bg-gray-200 text-gray-900" onClick={() => navigate(currentPage - 1)} disabled={currentPage === 1}>
         Previous
       </button>
-      {currentPage > 4 &&
-        <>
-          <button className="mx-1 px-4 py-2 rounded border border-gray-300 bg-gray-200 text-gray-900" onClick={() => navigate(1)}>
-            1
-          </button>
-          <span className="mx-1 px-4 py-2 text-gray-900">...</span>
-        </>
-      }
-      {pageNumbers.map((num: number) => {
-        return (
-          <button className={`${currentPage === num ? 'ring-1 font-bold' : ''} mx-1 px-4 py-2 rounded border border-gray-300 bg-gray-200 text-gray-900`} key={num} onClick={() => navigate(num)}>
-            {num}
-          </button>
-        )
-      })}
-      {currentPage <= (pageCount - 4) && 
-        <>
-          <span className="mx-1 px-4 py-2text-gray-900">...</span>
-          <button 
-            className={`mx-1 px-4 py-2 rounded border border-gray-300 bg-gray-200 text-gray-900`}
-            onClick={() => navigate(pageCount)}
-          >
-            {pageCount}
-          </button>
-        </>
-      }
-      <button className="mx-1 px-4 py-2 rounded border border-gray-300 bg-gray-200 text-gray-900" onClick={() => navigate(currentPage + 1)} disabled={currentPage === pageCount}>
+      <div className="flex items-center justify-center md:inline">
+        {currentPage > 4 &&
+          <>
+            <button className="mx-1 px-3 md:px-4 py-2 rounded border border-gray-300 bg-gray-200 text-gray-900" onClick={() => navigate(1)}>
+              1
+            </button>
+            <span className="mx-1 px-2 md:px-4 py-2 text-gray-900">...</span>
+          </>
+        }
+        {pageNumbers.map((num: number) => {
+          return (
+            <button className={`${currentPage === num ? 'ring-1 font-bold' : ''} mx-1 px-3 md:px-4 py-2 rounded border border-gray-300 bg-gray-200 text-gray-900`} key={num} onClick={() => navigate(num)}>
+              {num}
+            </button>
+          )
+        })}
+        {currentPage <= (pageCount - 4) && 
+          <>
+            <span className="mx-1 px-2 md:px-4 py-2 text-gray-900">...</span>
+            <button 
+              className={`mx-1 px-3 md:px-4 py-2 rounded border border-gray-300 bg-gray-200 text-gray-900`}
+              onClick={() => navigate(pageCount)}
+            >
+              {pageCount}
+            </button>
+          </>
+        }
+      </div>
+      <button className="mx-1 w-full my-2 md:my-0 md:w-min px-4 py-2 rounded border border-gray-300 bg-gray-200 text-gray-900" onClick={() => navigate(currentPage + 1)} disabled={currentPage === pageCount}>
         Next
       </button>
     </div>

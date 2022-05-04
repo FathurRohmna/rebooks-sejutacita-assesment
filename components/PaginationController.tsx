@@ -55,11 +55,11 @@ export const PaginationController: React.FC<PaginationProps> = ({
   return (
     <div className="w-full relative">
       <div className="flex items-center justify-center mb-8">
-        <div className="w-max flex">
+        <div className="w-max flex flex-wrap">
           {categories?.map((category) => {
             return (
               <div key={category.id}>
-                <button className={`${categoryIdParams == category.id ? 'bg-blue-500 border-white text-white font-bold' : 'border-gray-600 border'} px-4 py-2 rounded mx-2`} onClick={() => handleCategory(category.id)}>
+                <button className={`${categoryIdParams == category.id ? 'bg-blue-500 whitespace-nowrap border-white text-white font-bold' : 'border-gray-600 border'} px-4 py-2 rounded mx-2 my-2 md:my-0`} onClick={() => handleCategory(category.id)}>
                   {category.name}
                 </button>
               </div>

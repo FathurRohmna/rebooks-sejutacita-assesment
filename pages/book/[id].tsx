@@ -15,12 +15,12 @@ const GetBookById = () => {
     const getByAllData = state.books?.all_books?.filter((book) => book.id == bookId)
     const getByStorage = state.books?.bookmark?.filter((book) => book.id == bookId)
 
-    return getByPage || getByAllData || getByStorage
+    return getByPage && getByPage[0] || getByAllData && getByAllData[0] || getByStorage[0]
   })
 
   console.log(getBookById);
 
-  if (getBookById[0]?.title) {
+  if (getBookById?.title) {
     return (
       <div className="bg-white relative w-full">
         <div className="relative block overflow-x-hidden">
@@ -30,7 +30,7 @@ const GetBookById = () => {
                 <div className="relative w-full">
                   <Image
                     className="rounded-lg"
-                    src={getBookById[0]?.cover_url}
+                    src={getBookById?.cover_url}
                     alt="Profile"
                     layout="responsive"
                     width={60}
@@ -39,14 +39,14 @@ const GetBookById = () => {
                 </div>
               </div>
               <div className="w-full md:flex-1">
-                <h1 className="text-3xl font-bold">{getBookById[0]?.title}</h1>
-                <span>{getBookById[0]?.authors[0]} | {getBookById[0]?.audio_length} Audio Length</span>
+                <h1 className="text-3xl font-bold">{getBookById?.title}</h1>
+                <span>{getBookById?.authors[0]} | {getBookById?.audio_length} Audio Length</span>
                 <p className='my-8'>
-                  {getBookById[0]?.description}
+                  {getBookById?.description}
                 </p>
 
                 {
-                  getBookById[0]?.sections?.map((section, index) => {
+                  getBookById?.sections?.map((section, index) => {
                     return (
                       <div key={index} className="my-4">
                         <h3 className="font-bold mb-2">{section.title}</h3>

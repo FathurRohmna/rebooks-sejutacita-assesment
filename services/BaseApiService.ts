@@ -27,7 +27,7 @@ const OnResponseFailure = (error: any): Promise<any> => {
 }
 
 export const instance: AxiosInstance = axios.create({
-  baseURL: 'http://localhost:3002'
+  baseURL: ''
 })
 
 instance.interceptors.response.use(OnResponseSuccess, OnResponseFailure)

@@ -3,7 +3,18 @@ import Link from "next/link"
 
 import { BsBookmark, BsBookmarkCheckFill } from "react-icons/bs";
 
-export const BookCard = ({ image, id, title, author, section_length, saveBook, savedBook = false, removeBook }) => {
+type Props = {
+  image: string,
+  id: number,
+  title: string,
+  author: string,
+  section_length: number,
+  savedBook?: boolean,
+  saveBook?: any,
+  removeBook?: any
+}
+
+export const BookCard = ({ image, id, title, author, section_length, saveBook, savedBook = false, removeBook }: Props) => {
   return (
     <div className="p-2 rounded-lg border border-gray-200 w-full md:w-min">
       <div>

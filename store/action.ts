@@ -4,9 +4,9 @@ import { data as phData } from "../data/dummy"
 import { ActionTypes } from "./action-types"
 import { DataTypes } from "./data-types"
 
-export interface IAction<T> extends Action<string> {
-  type: string
-  payload?: T
+export interface IAction<T> extends Action<any> {
+  payload?: T,
+  [extraProps: string]: any
 }
 
 interface PayloadLoadData {
@@ -51,7 +51,7 @@ export const removeBookMark = (id) => ({
   payload: id
 })
 
-export function loadFetchData(dataType: DataTypes, params) {
+export function loadFetchData(dataType: DataTypes, params?: any) {
   return function (dispatch) {
     return GetData(dataType, params).then(response => dispatch(loadData(response, dataType, params)))
   }

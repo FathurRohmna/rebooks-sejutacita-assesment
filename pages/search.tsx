@@ -19,6 +19,7 @@ import { GetData } from "../hook/useGetData";
 import { useSelector, useDispatch } from "react-redux";
 import { State } from "../store";
 import { DataTypes } from "../store/data-types";
+import { Dispatch } from "redux";
 
 const Search = (props) => {
   const router = useRouter();
@@ -28,7 +29,7 @@ const Search = (props) => {
   const search = router.query.search;
 
   const routerState = useSelector((state: State) => state.books);
-  const dispatch = useDispatch();
+  const dispatch: Dispatch<any> = useDispatch();
 
   useEffect(() => {
     if ((!currentPage && !categoryId) || (!categoryId && !search)) {
@@ -92,7 +93,7 @@ const Search = (props) => {
               { shallow: true }
             )
           }}
-          pageSize={sizes}
+          pageSize={Number(sizes)}
           navigate={(page) =>
             router.push(
               `/search?categoryId=${categoryId || 11}&page=${page}&size=${

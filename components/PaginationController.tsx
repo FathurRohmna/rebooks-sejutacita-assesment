@@ -10,14 +10,14 @@ import { PaginationButton } from "./PaginationButton";
 export type PaginationProps = {
   setPageSize: (value: number) => void,
   pushSizeChange: (value) => void,
-  pageSize: number[],
+  pageSize: number[] | number,
   children: React.ReactNode,
   currentPage: number,
   searchType: any,
   pageCount: number,
   searchHandle: (value) => void,
   categories: any[],
-  categoryIdParams: string,
+  categoryIdParams: string | string[],
   navigate: (value: number) => void,
   handleCategory: (value: number) => void
 }

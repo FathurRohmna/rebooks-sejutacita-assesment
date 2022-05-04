@@ -12,11 +12,7 @@ export const GetData = (props) => {
         page: props.pageSize,
         size: props.size
       } 
-
-      console.log(rtData);
-
-      console.log("Load data herre", props, Object.keys(rtData).find(key => dsData[key] !== rtData[key]))
-
+      
       if (Object.keys(rtData).find(key => dsData[key] !== rtData[key])) {
         props.loadData(DataTypes.BOOKS, rtData)
       }
@@ -24,8 +20,9 @@ export const GetData = (props) => {
   }, [props.pageSize, props.size, props.category])
 
   useEffect(() => {
-    console.log('load all data');
-    props.loadCategoryDataLength(DataTypes.BOOKS)
+    if (props.category) {
+      props.loadCategoryDataLength(DataTypes.BOOKS)
+    }
   }, [props.category])
 
   return (

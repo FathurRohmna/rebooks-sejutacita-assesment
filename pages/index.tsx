@@ -49,7 +49,7 @@ export default function Home() {
       <div className="relative block overflow-x-hidden">
         <div className="relative z-1 mt-12 py-10 md:py-20 px-6 sm:py-6 md:pb-20 mx-auto md:w-11/12 lg:max-w-7xl">
           <div className="text-gray-500 lg:flex lg:flex-row w-full relative items-center">
-            <div className="md:flex-1 text-left items-center md:px-8 lg:px-0">
+            <div className="md:flex-1 text-left mb-8 md:mb-0 items-center md:px-8 lg:px-0">
               <h6 className="uppercase font-extrabold text-sm">
                 Lorem, ipsum dolor sit ametit.
               </h6>
@@ -65,7 +65,7 @@ export default function Home() {
                 <span className="inline-block">dengan Giat Membaca.</span>
               </h1>
               <p className="max-w-md">
-                Cari Bakat dan Peluangmu dengan Giat Membaca.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi debitis accusantium neque modi, cumque minima.
               </p>
               <button className="text-yellow-700 mt-8 font-bold">
                 Mulai mencari Buku
@@ -80,7 +80,7 @@ export default function Home() {
       <div id="about-us" className="relative block overflow-x-hidden">
         <div className="relative py-20 px-6 md:pb-20 mx-auto md:w-11/12 lg:max-w-7xl">
           <div className="max-w-md mx-auto text-lg text-gray-500">
-            <p className="italic tracking-wider text-center font-extralight">
+            <p className="italic tracking-wider text-center font-light">
               <span>
                 "Ketika saya punya tekad untuk sukses, tetapi bungung bagaimana
                 cara memulai. Juga bingung dan merasahilang akan tujuan hidup,
@@ -103,7 +103,7 @@ export default function Home() {
         </div>
       </div>
       <div className="relative block overflow-x-auto">
-        <div className="relative py-10 md:py-20 px-6 md:pb-20 mx-auto md:w-11/12 lg:max-w-7xl">
+        <div className="relative py-20 px-6 md:pb-20 mx-auto md:w-11/12 lg:max-w-7xl">
           <div className="flex w-max gap-8 md:gap-10 lg:gap-16">
             {authorBooks.map((author) => {
               return (

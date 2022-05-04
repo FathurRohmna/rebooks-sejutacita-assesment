@@ -69,7 +69,7 @@ export function Navbar() {
                               </div>
                             </a>
                           </Link>
-                          <Link href="/saved-book">
+                          <Link href="/#about-us">
                             <a
                               className="flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-yellow-300 
                                 text-yellow-700 focus:outline-none focus-visible:ring "
